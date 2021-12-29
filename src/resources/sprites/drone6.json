@@ -1,0 +1,95 @@
+{
+	"frames": {
+		"drone0": {
+			"frame": {
+				"x": 0,
+				"y": 0,
+				"w": 200,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 200,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 200,
+				"h": 150
+			}
+		},
+		"drone1": {
+			"frame": {
+				"x": 0,
+				"y": 150,
+				"w": 200,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 200,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 200,
+				"h": 150
+			}
+		},
+		"drone2": {
+			"frame": {
+				"x": 0,
+				"y": 300,
+				"w": 200,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 200,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 200,
+				"h": 150
+			}
+		},
+		"drone3": {
+			"frame": {
+				"x": 0,
+				"y": 450,
+				"w": 200,
+				"h": 150
+			},
+			"rotated": false,
+			"trimmed": false,
+			"spriteSourceSize": {
+				"x": 0,
+				"y": 0,
+				"w": 200,
+				"h": 150
+			},
+			"sourceSize": {
+				"w": 200,
+				"h": 150
+			}
+		}
+	},
+	"meta": {
+		"app": "app",
+		"version": "1.0",
+		"image": "spritesheet.png",
+		"format": "RGBA8888",
+		"size": {
+			"w": 200,
+			"h": 600
+		},
+		"scale": "1"
+	}
+}

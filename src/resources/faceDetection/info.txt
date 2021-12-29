@@ -1,0 +1,2 @@
+models created using https://www.customvision.ai/
+model type: Tensorflow(compact)

@@ -1,0 +1,49 @@
+# Python package
+# Create and test a Python package on multiple Python versions.
+# Add steps that analyze code, save the dist with the build record, publish to a PyPI-compatible index, and more:
+# https://docs.microsoft.com/azure/devops/pipelines/languages/python
+
+trigger: none
+
+jobs:
+- job:
+
+  strategy:
+    matrix:
+      Ubuntu:
+        agentPool: 'ubuntu-latest'
+        artifactName: 'droneChallengeApp-ubuntu'
+        python.version: '3.8'
+      Win10:
+        agentPool: 'windows-latest'
+        artifactName: 'droneChallengeApp-windows'
+        python.version: '3.8'
+
+  pool:
+    vmImage: '$(agentPool)'
+  steps:
+  - task: UsePythonVersion@0
+    inputs:
+      versionSpec: '$(python.version)'
+    displayName: 'Use Python $(python.version)'
+
+  - script: |
+      python -m pip install --upgrade pip
+      pip install -r requirements.txt
+    displayName: 'Install dependencies'
+
+  - script: |
+      python -m PyInstaller $(System.DefaultWorkingDirectory)/main.spec --distpath $(System.DefaultWorkingDirectory)/app
+    displayName: 'build application using PyInstaller'
+    
+  - task: CopyFiles@2
+    inputs:
+      SourceFolder: '$(System.DefaultWorkingDirectory)/app'
+      Contents: '**'
+      TargetFolder: '$(Build.ArtifactStagingDirectory)/app'
+      
+  - task: PublishBuildArtifacts@1
+    inputs:
+      PathtoPublish: '$(Build.ArtifactStagingDirectory)/app'
+      ArtifactName: '$(artifactName)'
+      publishLocation: 'Container'
